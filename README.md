@@ -269,7 +269,7 @@ Academic research in disaster analytics
 
 ## 👩‍💻 Author
 
-Manjot Kaur
+Manjot Kaur , Khushpreet Kaur
 
 B.Tech Computer Science & Engineering
 
