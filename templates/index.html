@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Disaster Relief Aid Prediction</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 40px 50px;
+            border-radius: 20px;
+            width: 420px;
+            text-align: center;
+            box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(8px);
+        }
+
+        h2 {
+            color: #00e0ff;
+            margin-bottom: 8px;
+            font-size: 24px;
+        }
+
+        p {
+            color: #bde8f3;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            text-align: left;
+            margin-top: 12px;
+            font-weight: 600;
+            color: #e2faff;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            background-color: #ffffffea;
+            color: #0f2027;
+            font-weight: 500;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #00e0ff;
+            box-shadow: 0 0 5px #00e0ff;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #00e0ff;
+            color: #0f2027;
+            font-weight: bold;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #00bcd4;
+            transform: scale(1.05);
+        }
+
+        footer {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #bde8f3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Disaster Relief Prediction</h2>
+        <p>Enter key disaster parameters below to estimate required aid and type.</p>
+
+        <form action="/predict" method="post">
+
+            <label>Severity Index:</label>
+            <input type="number" name="Severity_Index" step="any" placeholder="e.g., 0.5" required>
+
+            <label>Total Deaths (log):</label>
+            <input type="number" name="Total_Deaths_log" step="any" placeholder="e.g., 2.3" required>
+
+            <label>No. Injured (log):</label>
+            <input type="number" name="No_Injured_log" step="any" placeholder="e.g., 3.1" required>
+
+            <label>Total Affected (log):</label>
+            <input type="number" name="Total_Affected_log" step="any" placeholder="e.g., 5.6" required>
+
+            <label>Literacy Rate (%):</label>
+            <input type="number" name="literacy_rate" step="any" placeholder="e.g., 78.5" required>
+
+            <button type="submit">Predict Relief Aid</button>
+        </form>
+
+        <footer>🌍 Disaster Relief System | GNDEC </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disaster Relief Prediction Results</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            color: white;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.08);
+            padding: 30px 50px;
+            border-radius: 20px;
+            width: 520px;
+            box-shadow: 0px 6px 25px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: #00e0ff;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #d4f1f9;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            margin: 25px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.12);
+            border-radius: 15px;
+            padding: 20px;
+            width: 45%;
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .card h2 {
+            color: #00e0ff;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .label {
+            color: #b0e0f2;
+            font-size: 0.9em;
+        }
+
+        .data-table {
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+
+        th, td {
+            padding: 10px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        th {
+            text-align: left;
+            color: #00e0ff;
+        }
+
+        td {
+            color: #e0f7ff;
+        }
+
+        .back-btn {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 12px 20px;
+            background-color: #00e0ff;
+            color: #0f2027;
+            text-decoration: none;
+            border-radius: 10px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background-color: #00bcd4;
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📊 Disaster Relief Prediction</h1>
+    <p>Based on your input, here are the estimated results:</p>
+
+    <div class="card-container">
+        <div class="card">
+            <h2>Aid Quantity</h2>
+            <p class="value">{{ aid_amount }}</p>
+            <p class="label">Estimated Relief Units / Packages</p>
+        </div>
+
+        <div class="card">
+            <h2>Aid Type</h2>
+            <p class="value">{{ aid_type }}</p>
+            <p class="label">Predicted Relief Category</p>
+        </div>
+    </div>
+
+<div class="data-table">
+    <h3>📋 Input Summary</h3>
+    <table>
+        <tr><th>Severity Index</th><td>{{ data['Severity_Index'] }}</td></tr>
+        <tr><th>Total Deaths (log)</th><td>{{ data['Total Deaths_log'] }}</td></tr>
+        <tr><th>No. Injured (log)</th><td>{{ data['No. Injured_log'] }}</td></tr>
+        <tr><th>Total Affected (log)</th><td>{{ data['Total Affected_log'] }}</td></tr>
+        <tr><th>Literacy Rate</th><td>{{ data['literacy_rate'] }}</td></tr>
+    </table>
+</div>
+
+    <a href="/" class="back-btn">← Predict Again</a>
+</div>
+
+</body>
+</html>
